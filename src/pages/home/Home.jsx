@@ -4,7 +4,8 @@ import {useNavigate} from "react-router-dom";
 import gsap from 'gsap';
 import {useGSAP} from "@gsap/react";
 import SplitText from "gsap/SplitText"
-import {useRef} from "react";
+import {useRef, useState} from "react";
+import Cursor from "../../components/cursor/Cursor.jsx";
 
 function Home () {
 
@@ -12,6 +13,7 @@ function Home () {
     const textRef1 = useRef(null);
     const textRef2 = useRef(null);
     const buttonRef = useRef(null);
+    const [cursorType, setCursorType] = useState("dot");
 
     gsap.registerPlugin(SplitText);
 
@@ -51,11 +53,15 @@ function Home () {
 
     return (
         <>
+        <Cursor variant={cursorType}/>
         <div className="homepage">
             <main className="home-container">
             <div className="greeting-container">
                 <span ref={textRef1} className="headline greeting">Hello</span>
-                <span ref={textRef2} className="headline">I'm Kiki</span>
+                <span ref={textRef2}
+                      className="headline"
+                      onMouseEnter={()=> setCursorType("image")}
+                      onMouseLeave={()=> setCursorType("dot")}>I'm Kiki</span>
             </div>
             <div ref={buttonRef} className="button-container">
                 <Button
@@ -63,12 +69,14 @@ function Home () {
                     variant="primary"
                     onClick={() => {navigate("/projects")}}
                     buttonText="projects"
+                    setCursorType={setCursorType}
                 />
                 <Button
                     type="button"
                     variant="secondary"
                     onClick={() => {navigate("/contact")}}
                     buttonText="contact"
+                    setCursorType={setCursorType}
                 />
             </div>
             </main>

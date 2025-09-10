@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import {useRef} from "react";
 
-function Button({ type, variant, onClick, buttonText, form}) {
+function Button({ type, variant, onClick, buttonText, form, setCursorType}) {
 
     const buttonRef = useRef(null);
 
@@ -37,7 +37,10 @@ function Button({ type, variant, onClick, buttonText, form}) {
             onTouchStart={handleMouseDown}
             onMouseUp={handleMouseUp}
             onTouchEnd={handleMouseUp}
-            onMouseLeave={handleMouseUp}
+            onMouseEnter={() => setCursorType("hidden")}
+            onMouseLeave={() => {
+                handleMouseUp();
+                setCursorType("dot")}}
             form={form}
         >
             {buttonText}

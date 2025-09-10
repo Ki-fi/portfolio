@@ -11,6 +11,7 @@ function Home () {
     const navigate = useNavigate();
     const textRef1 = useRef(null);
     const textRef2 = useRef(null);
+    const buttonRef = useRef(null);
 
     gsap.registerPlugin(SplitText);
 
@@ -40,7 +41,11 @@ function Home () {
                         amount: 1,
                         from: "random"
                     }
-                }, "-=0.5");
+                }, "-=0.5")
+                .fromTo(buttonRef.current,
+                    { y: 50, autoAlpha: 0 },
+                    { y: 0, autoAlpha: 1, duration: 0.7, ease: "power3.out", stagger: 0.9
+                }, "-=0.1");
         });
     });
 
@@ -52,7 +57,7 @@ function Home () {
                 <span ref={textRef1} className="headline greeting">Hello</span>
                 <span ref={textRef2} className="headline">I'm Kiki</span>
             </div>
-            <div className="button-container">
+            <div ref={buttonRef} className="button-container">
                 <Button
                     type="button"
                     variant="primary"

@@ -1,18 +1,56 @@
 import './Home.css';
 import Button from "../../components/button/Button.jsx";
 import {useNavigate} from "react-router-dom";
-
+import gsap from 'gsap';
+import {useGSAP} from "@gsap/react";
+import SplitText from "gsap/SplitText"
+import {useRef} from "react";
 
 function Home () {
+
     const navigate = useNavigate();
+    const textRef1 = useRef(null);
+    const textRef2 = useRef(null);
+
+    gsap.registerPlugin(SplitText);
+
+    useGSAP(()=> {
+        document.fonts.ready.then(() => {
+
+            let split1 = SplitText.create(textRef1.current, {type: "chars"});
+            let split2 = SplitText.create(textRef2.current, {type: "chars"});
+
+            gsap.timeline()
+                .from(split1.chars, {
+                    yPercent: "random([-100, 100])",
+                    rotation: "random(-40, 40)",
+                    autoAlpha: 0,
+                    ease: "back.out",
+                    stagger: {
+                        amount: 1,
+                        from: "random"
+                    }
+                })
+                .from(split2.chars, {
+                    yPercent: "random([-100, 100])",
+                    rotation: "random(-40, 40)",
+                    autoAlpha: 0,
+                    ease: "back.out",
+                    stagger: {
+                        amount: 1,
+                        from: "random"
+                    }
+                }, "-=0.5");
+        });
+    });
 
     return (
         <>
         <div className="homepage">
             <main className="home-container">
             <div className="greeting-container">
-                <img src="/src/assets/HELLO.svg" alt="Hello"/>
-                <img src="/src/assets/I’M KIKI.svg" alt="I'm Kiki"/>
+                <span ref={textRef1} className="headline greeting">Hello</span>
+                <span ref={textRef2} className="headline">I'm Kiki</span>
             </div>
             <div className="button-container">
                 <Button

@@ -24,6 +24,11 @@
     gap: 24px;
 }
 
+.greeting {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--Text-dark);
+}
+
 .button-container {
     display: flex;
     gap: 24px;

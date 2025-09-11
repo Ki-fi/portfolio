@@ -1,0 +1,23 @@
+
+.cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.cursor-dot {
+    height: 16px;
+    width: 16px;
+    border-radius: 8px;
+    background: var(--Text-dark);
+}
+
+.cursor-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: -3px 18px 27px -16px rgba(0,0,0,0.75);
+    transform: translate(-10px, -85%);
+}

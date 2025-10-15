@@ -69,6 +69,15 @@ p, .default-body-text {
   letter-spacing: 1px;
 }
 
+.sectiontitle {
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--Green);
+  letter-spacing: 2px;
+}
+
 a {
   text-decoration: inherit;
   text-decoration: underline;

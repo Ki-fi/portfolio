@@ -1,8 +1,11 @@
 import './Card.css';
 
-function Card({ thumbnail, chips }) {
+function Card({ thumbnail, chips, onClick }) {
+
     return (
-        <article className="card">
+        <article className="card"
+                 onClick={onClick}
+        >
             <div className="card-content">
                 <img src={thumbnail} alt="project-thumbnail"/>
             </div>

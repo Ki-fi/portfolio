@@ -88,9 +88,6 @@ function Home () {
                 <img src="/src/assets/tech-stack/React.png" alt="React"/>
             </footer>
         </div>
-        <div className="background-container">
-            <img src="/src/assets/Keys.png" alt="Keyboard"/>
-        </div>
         </>
     )
 }

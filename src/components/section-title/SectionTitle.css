@@ -1,0 +1,14 @@
+
+.section-title {
+    display: flex;
+    flex-basis: 50vw;
+    flex-grow: 1;
+    align-items: flex-start;
+}
+
+.section-title span {
+    border: var(--Green) solid 2px;
+    color: var(--Green);
+    border-radius: 4px;
+    padding: 8px 24px 8px 24px;
+}

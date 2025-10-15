@@ -9,6 +9,8 @@
     border-radius: 4px;
     background: #EBEBEB;
     box-shadow: 0 6px 0 0 var(--Text-dark);
+    min-width: 350px;
+    cursor: pointer;
 }
 
 .card-content {

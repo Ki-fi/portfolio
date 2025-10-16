@@ -2,7 +2,11 @@
 .overview {
     display: flex;
     flex-direction: row;
-    margin: 80px;
+    gap: 24px;
+}
+
+.overview .section-title {
+    flex-basis: 50vw;
 }
 
 .project-info {
@@ -11,18 +15,18 @@
     flex-grow: 1;
     flex-direction: column;
     align-items: flex-start;
-    flex-wrap: wrap;
     gap: 16px;
 }
 
-.project-info p {
+.project-info > p {
     text-align: left;
     padding-bottom: 24px;
 }
 
 .project-tags {
     display: flex;
-    gap: 46px;
+    gap: 24px;
+    flex-wrap: wrap;
 }
 
 .project-tags div {

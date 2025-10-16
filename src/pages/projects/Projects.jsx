@@ -1,6 +1,6 @@
 import './Projects.css';
 import Card from "../../components/card/Card.jsx";
-import thumbnailProject1 from "../../assets/project-1/Mockup_Post.jpg";
+import thumbnailProject1 from "../../assets/petnet/Mockup_Post.jpg";
 import Chip from "../../components/chip/Chip.jsx";
 import {useNavigate} from "react-router-dom";
 

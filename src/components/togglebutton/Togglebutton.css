@@ -1,13 +1,14 @@
 
 .button-wrapper {
     display: flex;
-    align-items: flex-start;
+    justify-content: center;
+    padding-top: 24px;
 }
 
 .toggle-button {
     display: flex;
     justify-content: center;
-    flex-grow: 1;
+    flex-grow: 0;
     border: none;
     background: none;
     cursor: pointer;

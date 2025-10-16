@@ -1,8 +1,6 @@
 
 .section-title {
     display: flex;
-    flex-basis: 50vw;
-    flex-grow: 1;
     align-items: flex-start;
 }
 

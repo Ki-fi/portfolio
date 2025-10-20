@@ -4,6 +4,10 @@ import ToggleButton from "../../components/togglebutton/Togglebutton.jsx";
 import React from "react";
 import SectionTitle from "../../components/section-title/SectionTitle.jsx";
 import petnetBanner from "../../assets/petnet/Petnet_Banner.jpg";
+import mockupLogin from "../../assets/petnet/Mockup_login.jpg";
+import mockupDesignSystem from "../../assets/petnet/Mockup_DesignSystem.jpg";
+import mockupShapes from "../../assets/petnet/Mockup_Shapes.jpg";
+import mockupIllustrations from "../../assets/petnet/Mockup_Illustrations.jpg";
 import one from "../../assets/petnet/1.jpg";
 import two from "../../assets/petnet/2.jpg";
 import three from "../../assets/petnet/3.jpg";
@@ -11,7 +15,7 @@ import four from "../../assets/petnet/4.jpg";
 
 function Petnet() {
 
-    const [selected, setSelected] = React.useState('left');
+    // const [selected, setSelected] = React.useState('left');
 
     return (
         <div className="project-page">
@@ -26,13 +30,13 @@ function Petnet() {
                 tag3Title={"database"}
                 tag3Body={"PostgreSQL"}
             />
-            <section>
+            <section className="portfolio-section">
                 <ToggleButton
                     buttonNameLeft="Concept"
                     buttonNameMiddle="Functional Design"
                     buttonNameRight="Technical Design"
-                    selected={selected}
-                    handleToggle={setSelected}
+                    selected={'left'}
+                    // handleToggle={}
                 />
                 <SectionTitle text={"Core features"}/>
                 <div className="core-features">
@@ -65,6 +69,28 @@ function Petnet() {
                             <p>“As pet sitter I want to respond to a post, so that I can be considered for pet sitting”</p>
                         </div>
                     </div>
+                </div>
+                <div className="portfolio-image">
+                    <img src={mockupLogin} alt="Mock-up"/>
+                </div>
+            </section>
+            <section className="portfolio-section">
+                <ToggleButton
+                    buttonNameLeft="Concept"
+                    buttonNameMiddle="Functional Design"
+                    buttonNameRight="Technical Design"
+                    selected={'middle'}
+                    // handleToggle={}
+                />
+                <SectionTitle text={"Design System"}/>
+                <div className="portfolio-image">
+                    <img src={mockupDesignSystem} alt="Mock-up"/>
+                </div>
+                <div className="portfolio-image">
+                    <img src={mockupShapes} alt="Mock-up"/>
+                </div>
+                <div>
+                    <img className="mockup-illustrations" src={mockupIllustrations} alt="Mock-up"/>
                 </div>
             </section>
         </div>

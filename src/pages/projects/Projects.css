@@ -23,3 +23,11 @@
     grid-row: 4/6;
     grid-column: 1/span 5;
 }
+
+@media screen and (max-width: 768px) {
+    .projects-page {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+}

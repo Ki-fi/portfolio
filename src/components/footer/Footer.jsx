@@ -8,8 +8,8 @@ function Footer( { setCursorType } ) {
         <footer className="footer">
             <article>
                 <img src={keyboard} alt="keyboard"/>
-                <span className='subheading'>Tot uw dienst</span>
-                <p>Van concept tot implementatie, in de strijd tegen digitale uniformiteit maak ik van ideeën op papier,
+                <span className='subheading'>Van concept tot implementatie</span>
+                <p>In de strijd tegen digitale uniformiteit maak ik van ideeën op papier,
                     karaktervolle, betekenisvolle en functionele producten.</p>
                 <p>Plan een gratis kennismaking in</p>
                 <Button

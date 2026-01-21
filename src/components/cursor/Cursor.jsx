@@ -2,6 +2,7 @@ import './Cursor.css';
 import {useEffect, useRef} from "react";
 import gsap from 'gsap';
 import {useGSAP} from "@gsap/react";
+import portrait from "/src/assets/portrait.png";
 
 function Cursor({ variant }) {
 
@@ -33,7 +34,7 @@ function Cursor({ variant }) {
             className={"cursor"}
         >
             {variant === "dot" && <div className="cursor-dot" />}
-            {variant === "image" && <img className="cursor-image" src="/src/assets/portrait.png" alt="cursor" />}
+            {variant === "image" && <img className="cursor-image" src={portrait} alt="cursor" />}
         </div>
     )
 

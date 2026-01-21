@@ -1,4 +1,4 @@
-import './ToggleButton.css';
+import './Togglebutton.css';
 import React from "react";
 
 function ToggleButton({ buttonNameLeft, buttonNameRight, buttonNameMiddle, selected, handleToggle }) {

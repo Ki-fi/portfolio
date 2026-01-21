@@ -1,0 +1,44 @@
+
+.overview {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    padding-bottom: 80px;
+}
+
+.overview .section-title {
+    flex-basis: 50vw;
+}
+
+.project-info {
+    display: flex;
+    flex-basis: 50vw;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.project-info > p {
+    text-align: left;
+    padding-bottom: 24px;
+}
+
+.project-tags {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.project-tags div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.project-tags div span {
+    color: var(--Gray-light);
+}
+

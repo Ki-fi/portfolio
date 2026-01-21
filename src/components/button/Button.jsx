@@ -31,7 +31,7 @@ function Button({ type, variant, onClick, buttonText, form, setCursorType}) {
         <button
             ref={buttonRef}
             type={type}
-            className={variant}
+            className={`${variant} btn`}
             onClick={onClick}
             onMouseDown={handleMouseDown}
             onTouchStart={handleMouseDown}

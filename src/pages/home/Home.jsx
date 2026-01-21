@@ -6,6 +6,7 @@ import {useGSAP} from "@gsap/react";
 import SplitText from "gsap/SplitText"
 import {useRef, useState} from "react";
 import Cursor from "../../components/cursor/Cursor.jsx";
+import Chip from "../../components/chip/Chip.jsx";
 
 function Home () {
 
@@ -13,6 +14,7 @@ function Home () {
     const textRef1 = useRef(null);
     const textRef2 = useRef(null);
     const buttonRef = useRef(null);
+    const disciplinesRef = useRef(null);
     const [cursorType, setCursorType] = useState("dot");
 
     gsap.registerPlugin(SplitText);
@@ -47,7 +49,12 @@ function Home () {
                 .fromTo(buttonRef.current,
                     { y: 50, autoAlpha: 0 },
                     { y: 0, autoAlpha: 1, duration: 0.7, ease: "power3.out", stagger: 0.9
-                }, "-=0.1");
+                }, "-=0.1")
+                .fromTo(disciplinesRef.current,
+                    { y: 50, autoAlpha: 0 },
+                    { y: 0, autoAlpha: 1, duration: 0.7, ease: "power3.out", stagger: 0.9
+                    }, "-=0.1");
+
         });
     });
 
@@ -57,11 +64,18 @@ function Home () {
         <div className="homepage">
             <main className="home-container">
             <div className="greeting-container">
-                <span ref={textRef1} className="headline greeting">Hello</span>
+                <span ref={textRef1} className="headline greeting">Hello,</span>
                 <span ref={textRef2}
                       className="headline"
                       onMouseEnter={()=> setCursorType("image")}
                       onMouseLeave={()=> setCursorType("dot")}>I'm Kiki</span>
+                <div ref={disciplinesRef} className="disciplines">
+                    <Chip chipText={"User Research"}/>
+                    <Chip chipText={"Interaction Design"}/>
+                    <Chip chipText={"Visual Design"}/>
+                    <Chip chipText={"Frontend Development"}/>
+                    <Chip chipText={"Product Strategy"}/>
+                </div>
             </div>
             <div ref={buttonRef} className="button-container">
                 <Button
@@ -80,16 +94,8 @@ function Home () {
                 />
             </div>
             </main>
-            <footer className="techstack-container">
-                <img src="/src/assets/tech-stack/Figma.png" alt="Figma"/>
-                <img src="/src/assets/tech-stack/HTML_.png" alt="HTML"/>
-                <img src="/src/assets/tech-stack/CSS.png" alt="CSS"/>
-                <img src="/src/assets/tech-stack/J_S.png" alt="Javascript"/>
-                <img src="/src/assets/tech-stack/React.png" alt="React"/>
+            <footer>
             </footer>
-        </div>
-        <div className="background-container">
-            <img src="/src/assets/Keys.png" alt="Keyboard"/>
         </div>
         </>
     )

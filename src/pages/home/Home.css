@@ -2,11 +2,12 @@
 .homepage {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 64px);
+    height: 100vh;
+    width: 100vw;
     gap: 32px;
-    margin: 32px;
     position: relative;
     z-index: 2;
+    background-color: #D8D6AD;
 }
 
 .home-container {
@@ -15,13 +16,14 @@
     justify-content: center;
     flex-grow: 1;
     gap: 42px;
+    margin: 32px;
 }
 
 .greeting-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
+    gap: 12px;
     cursor: default;
 }
 
@@ -30,25 +32,17 @@
     -webkit-text-stroke: 2px var(--Text-dark);
 }
 
+.disciplines {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 500px;
+    gap: 8px;
+    padding: 12px;
+}
+
 .button-container {
     display: flex;
+    justify-content: center;
     gap: 24px;
-}
-
-.techstack-container img{
-    height: 50px;
-}
-
-.background-container {
-    min-width: 600px;
-    max-width: 800px;
-    position: absolute;
-    top: -200px;
-    left: 45%;
-    z-index: 1;
-    overflow: hidden;
-}
-
-.background-container img {
-    width: 100%;
 }

@@ -89,8 +89,8 @@ function Home () {
                 <Button
                     type="button"
                     variant="secondary"
-                    onClick={() => {navigate("/contact")}}
-                    buttonText="contact"
+                    onClick={() => {navigate("/services")}}
+                    buttonText="services"
                     setCursorType={setCursorType}
                 />
             </div>

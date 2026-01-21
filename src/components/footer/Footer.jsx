@@ -1,8 +1,6 @@
 import './Footer.css';
-import Button from "../button/Button.jsx";
-import keyboard from "/src/assets/Keyboard.png";
 
-function Footer( { setCursorType } ) {
+function Footer( ) {
 
     return (
         <footer className="footer">

@@ -1,8 +1,8 @@
 import './Chip.css';
 
-function Chip({ chipText }) {
+function Chip({ variant, chipText }) {
     return (
-        <span className="chip subtitle">{chipText}</span>
+        <span className={`subtitle ${variant}`}>{chipText}</span>
     )
 }
 

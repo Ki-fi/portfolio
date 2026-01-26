@@ -1,5 +1,5 @@
 
-.chip {
+.filled {
     display: inline-flex;
     padding: 2px 12px;
     align-items: center;
@@ -7,4 +7,14 @@
     border-radius: 16px;
     background: var(--Text-light);
     color: var(--Text-dark);
+}
+
+.outlined {
+    padding: 4px 12px;
+    align-items: center;
+    gap: 6px;
+    border: 2px solid #40999C;
+    border-radius: 8px;
+    background: #DDF7F8;
+    color: #40999C;
 }

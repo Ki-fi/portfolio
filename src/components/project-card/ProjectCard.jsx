@@ -1,9 +1,9 @@
-import './Card.css';
+import './ProjectCard.css';
 
-function Card({ thumbnail, chips, onClick }) {
+function ProjectCard({ thumbnail, chips, onClick }) {
 
     return (
-        <article className="card"
+        <article className="project-card"
                  onClick={onClick}
         >
             <div className="card-content">
@@ -16,4 +16,4 @@ function Card({ thumbnail, chips, onClick }) {
     )
 }
 
-export default Card;
+export default ProjectCard;

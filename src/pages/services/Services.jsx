@@ -1,10 +1,12 @@
-// 1. card component maken/updaten. 2. array met card content maken. 3. page layout maken (nav + carousel) 3. Loop inrichten
+// 1. project-card component maken/updaten. 2. array met project-card content maken. 3. page layout maken (nav + carousel) 3. Loop inrichten
 
 import './Services.css';
 import Header from "../../components/header/Header.jsx";
 import Footer from "../../components/footer/Footer.jsx";
 import Button from "../../components/button/Button.jsx";
 import portrait from "/src/assets/portrait.png";
+import Chip from "../../components/chip/Chip.jsx";
+import ServiceCard from "../../components/service-card/ServiceCard.jsx";
 
 function Services() {
 
@@ -14,13 +16,28 @@ function Services() {
                 <Header/>
             </header>
             <div className="services-wrapper">
-                <section className="services-section">
+                <section className="services-intro">
                     <span className='headline'>Services</span>
                     <p>Als Freelance Strategisch Product Designer ontwerp ik functionele en karaktervolle applicaties en websites.</p>
                     <p>Ik help je team of organisatie om complexe ideeën tot heldere en mensgerichte producten te maken. Met het oog op je bedrijfsdoelen en op de toekomst.</p>
                 </section>
+                <section className="services-section">
+                    <ServiceCard
+                        cardTitle={"Visual Design"}
+                        cardBody={"Ik geef het product een herkenbare, aantrekkelijke en herbruikbare visuele identiteit. Elk element sluit aan bij het merk én vergroot de gebruikservaring."}
+                        chips={
+                        <>
+                            <Chip variant={"outlined"} chipText={"Design System met UI kit en Style guide"}/>
+                            <Chip variant={"outlined"} chipText={"High fidelity mockups"}/>
+                            <Chip variant={"outlined"} chipText={"WCAG-proof, responsive designs"}/>
+                        </>
+                    }>
+
+                    </ServiceCard>
+
+                </section>
                 <section className='contact-section'>
-                    <img className="contact-image" src={portrait} alt="portrait" />
+                    <img className="contact-image" src={portrait} alt="avatar" />
                     <span className='subheading'>Samenwerken?</span>
                     <p>Ik ben benieuwd naar je idee of uitdaging en ik denk graag even met je mee.</p>
                     <div className='button-container'>

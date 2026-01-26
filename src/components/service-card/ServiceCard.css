@@ -1,0 +1,24 @@
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 6px 0 0 var(--Text-dark);
+    min-width: 350px;
+    padding: 64px;
+    margin: 0 46px;
+    gap: 16px;
+}
+
+.card-body {
+    text-align: left;
+}
+
+.deliverables {
+    display: flex;
+    align-content: flex-start;
+    gap: 8px;
+    flex-wrap: wrap;
+}

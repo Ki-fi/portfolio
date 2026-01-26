@@ -15,11 +15,19 @@ header {
     background-color: #D8D6AD;
 }
 
-.services-section, .contact-section {
+.services-intro, .services-section, .contact-section {
     max-width: 500px;
     align-items: center;
 }
 
 .contact-image {
     width: 200px;
+}
+
+.services-intro {
+    margin-top: 32px;
+}
+
+.services-section {
+    max-width: 1000px;
 }

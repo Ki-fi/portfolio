@@ -1,5 +1,5 @@
 import './Projects.css';
-import Card from "../../components/card/Card.jsx";
+import ProjectCard from "../../components/project-card/ProjectCard.jsx";
 import thumbnailProject1 from "../../assets/petnet/Mockup_Post.jpg";
 import thumbnailProject2 from "../../assets/EP/Mockup_Overview.jpg";
 import thumbnailProject3 from "../../assets/PIDZ/Mockup_login.jpg";
@@ -12,35 +12,35 @@ function Projects() {
     return (
         <div className="projects-page">
             <div className="project-1">
-                <Card
+                <ProjectCard
                     thumbnail={thumbnailProject1}
                     onClick={() => {}}
                     // onClick={() => {navigate("/petnet")}}
                     chips={
                         <>
-                        <Chip chipText={"Software Development"}/>
+                        <Chip variant={"filled"} chipText={"Software Development"}/>
                         </>}
                 />
             </div>
             <div className="project-2">
-                <Card
+                <ProjectCard
                     thumbnail={thumbnailProject2}
                     onClick={() => {}}
                     chips={
                         <>
-                            <Chip chipText={"Interaction Design"}/>
-                            <Chip chipText={"Visual Design"}/>
+                            <Chip variant={"filled"} chipText={"Interaction Design"}/>
+                            <Chip variant={"filled"} chipText={"Visual Design"}/>
                         </>}
                 />
             </div>
             <div className="project-3">
-                <Card
+                <ProjectCard
                     thumbnail={thumbnailProject3}
                     onClick={() => {}}
                     chips={
                         <>
-                            <Chip chipText={"User Research"}/>
-                            <Chip chipText={"Interaction Design"}/>
+                            <Chip variant={"filled"} chipText={"User Research"}/>
+                            <Chip variant={"filled"} chipText={"Interaction Design"}/>
                         </>}
                 />
             </div>

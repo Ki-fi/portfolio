@@ -1,15 +1,25 @@
 
+header {
+    position: sticky;
+    top: 0;
+    background-color: #D8D6AD;
+}
+
 .services-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     gap: 82px;
-    height: 100vh;
     width: 100vw;
     background-color: #D8D6AD;
 }
 
-.services-section {
+.services-section, .contact-section {
     max-width: 500px;
+    align-items: center;
+}
+
+.contact-image {
+    width: 200px;
 }

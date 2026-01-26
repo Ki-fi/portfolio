@@ -53,9 +53,9 @@ p, .default-body-text {
 .subheading {
   font-family: "Bowlby One SC", sans-serif;
   font-weight: 400;
-  font-size: 42px;
+  font-size: 28px;
   font-style: normal;
-  line-height: 48px;
+  line-height: 26px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }

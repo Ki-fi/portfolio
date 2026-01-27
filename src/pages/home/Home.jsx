@@ -83,16 +83,16 @@ function Home () {
                     type="button"
                     variant="primary"
                     onClick={() => {navigate("/projects")}}
-                    buttonText="projects"
-                    setCursorType={setCursorType}
-                />
+                    setCursorType={setCursorType}>
+                    Projects
+                </Button>
                 <Button
                     type="button"
                     variant="secondary"
                     onClick={() => {navigate("/services")}}
-                    buttonText="services"
-                    setCursorType={setCursorType}
-                />
+                    setCursorType={setCursorType}>
+                    Services
+                </Button>
             </div>
             </main>
             <Footer/>

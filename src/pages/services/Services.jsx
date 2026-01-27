@@ -1,5 +1,3 @@
-// 1. project-card component maken/updaten. 2. array met project-card content maken. 3. page layout maken (nav + carousel) 3. Loop inrichten
-
 import './Services.css';
 import Header from "../../components/header/Header.jsx";
 import Footer from "../../components/footer/Footer.jsx";
@@ -55,14 +53,17 @@ function Services() {
                             type="button"
                             variant="secondary"
                             onClick={() => {handlePrevClick()}}
-                            buttonText="Vorige"
-                        />
+                            aria-label="Vorige service">
+                            <span className="material-symbols-outlined">arrow_back_ios</span>
+                        </Button>
                         <Button
                             type="button"
                             variant="secondary"
                             onClick={() => {handleNextClick()}}
-                            buttonText="Volgende"
-                        />
+                            aria-label="Volgende service"
+                            aria-label="Vorige service">
+                            <span className="material-symbols-outlined">arrow_forward_ios</span>
+                        </Button>
                     </div>
                 </section>
                 <section className='contact-section'>
@@ -73,9 +74,9 @@ function Services() {
                         <Button
                             type="button"
                             variant="primary"
-                            onClick={() => {window.location.href = "mailto:mail@kikimeekels.nl"}}
-                            buttonText="Plan een kennismaking"
-                        />
+                            onClick={() => {window.location.href = "mailto:mail@kikimeekels.nl"}}>
+                            Plan een kennismaking
+                        </Button>
                     </div>
                 </section>
                 <Footer/>

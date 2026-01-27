@@ -1,9 +1,10 @@
 import './ServiceCard.css';
+import { forwardRef } from 'react';
 
-function ServiceCard( { cardTitle, cardBody, chips } ) {
+const ServiceCard = forwardRef( ( { cardTitle, cardBody, chips }, ref) => {
 
     return (
-        <article className="service-card">
+        <article ref={ref} className="service-card">
             <span className='subheading'>{cardTitle}</span>
             <p className='card-body'>{cardBody}</p>
             <span className='subtitle'>Wat lever ik op:</span>
@@ -12,7 +13,7 @@ function ServiceCard( { cardTitle, cardBody, chips } ) {
             </div>
         </article>
     )
-
 }
+);
 
 export default ServiceCard;

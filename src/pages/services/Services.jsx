@@ -7,18 +7,23 @@ import {useState} from "react";
 import {inventory} from "../../constants/inventory.js";
 import ServiceCard from "../../components/service-card/ServiceCard.jsx";
 import Chip from "../../components/chip/Chip.jsx";
+import { useRef, useLayoutEffect } from 'react';
+import gsap from 'gsap';
 
 function Services() {
 
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [direction, setDirection] = useState(1);
     const currentService = inventory[currentIndex];
-
+    const cardRef = useRef(null);
 
     const handleNextClick = () => {
+        setDirection(1);
         setCurrentIndex((currentIndex + 1) % inventory.length);
     };
 
     const handlePrevClick = () => {
+        setDirection(-1);
         setCurrentIndex((currentIndex - 1 + inventory.length) % inventory.length);
     };
 
@@ -27,8 +32,18 @@ function Services() {
             key={deliverable}
             variant="outlined"
             chipText={deliverable}
-        />
-    ));
+        />));
+
+    useLayoutEffect(() => {
+        if (!cardRef.current) return;
+
+        gsap.fromTo(
+            cardRef.current,
+            { x: 100 * direction, opacity: 0 },
+            { x: 0, opacity: 1, duration: 0.5, ease: 'power2.out' }
+        );
+    }, [currentIndex, direction]);
+
 
     return (
         <>
@@ -43,6 +58,7 @@ function Services() {
                 </section>
                 <section className="services-section">
                     <ServiceCard
+                        ref={cardRef}
                         key={currentService.title}
                         cardTitle={currentService.title}
                         cardBody={currentService.body}
@@ -60,8 +76,7 @@ function Services() {
                             type="button"
                             variant="secondary"
                             onClick={() => {handleNextClick()}}
-                            aria-label="Volgende service"
-                            aria-label="Vorige service">
+                            aria-label="Volgende service">
                             <span className="material-symbols-outlined">arrow_forward_ios</span>
                         </Button>
                     </div>

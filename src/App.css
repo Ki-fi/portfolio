@@ -97,6 +97,7 @@ a:hover {
   line-height: 1;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   font-variation-settings: 'FILL' 0,
   'wght' 400,
   'GRAD' 0,

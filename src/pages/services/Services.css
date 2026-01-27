@@ -1,0 +1,40 @@
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: #D8D6AD;
+}
+
+.services-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 82px;
+    width: 100vw;
+    background-color: #D8D6AD;
+}
+
+.services-intro, .services-section, .contact-section {
+    max-width: 500px;
+    align-items: center;
+}
+
+.contact-image {
+    width: 200px;
+}
+
+.services-intro {
+    margin-top: 32px;
+}
+
+.services-section {
+    max-width: 900px;
+    margin: 0 46px;
+}
+
+.carousel-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}

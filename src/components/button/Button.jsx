@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import {useRef} from "react";
 
-function Button({ type, variant, onClick, buttonText, form, setCursorType}) {
+function Button({ type, variant, onClick, children, form, setCursorType}) {
 
     const buttonRef = useRef(null);
 
@@ -43,7 +43,7 @@ function Button({ type, variant, onClick, buttonText, form, setCursorType}) {
                 setCursorType("dot")}}
             form={form}
         >
-            {buttonText}
+            {children}
         </button>
     );
 }

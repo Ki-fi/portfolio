@@ -4,6 +4,7 @@ import {Route, Routes} from "react-router-dom";
 import Home from "./pages/home/Home.jsx";
 import Projects from "./pages/projects/Projects.jsx";
 import Petnet from "./pages/petnet/Petnet.jsx";
+import Services from "./pages/services/Services.jsx";
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
       <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/services" element={<div></div>} />
+          <Route path="/services" element={<Services />} />
           <Route path="/petnet" element={<Petnet/>} />
           <Route path="*" element={<div></div>} />
       </Routes>

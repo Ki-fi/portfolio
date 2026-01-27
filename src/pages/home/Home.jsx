@@ -71,11 +71,11 @@ function Home () {
                       onMouseEnter={()=> setCursorType("image")}
                       onMouseLeave={()=> setCursorType("dot")}>ik ben Kiki</span>
                 <div ref={disciplinesRef} className="disciplines">
-                    <Chip chipText={"User Research"}/>
-                    <Chip chipText={"Interaction Design"}/>
-                    <Chip chipText={"Visual Design"}/>
-                    <Chip chipText={"Frontend Development"}/>
-                    <Chip chipText={"Product Strategy"}/>
+                    <Chip variant={"filled"} chipText={"User Research"}/>
+                    <Chip variant={"filled"} chipText={"Interaction Design"}/>
+                    <Chip variant={"filled"} chipText={"Visual Design"}/>
+                    <Chip variant={"filled"} chipText={"Frontend Development"}/>
+                    <Chip variant={"filled"} chipText={"Product Strategy"}/>
                 </div>
             </div>
             <div ref={buttonRef} className="button-container">
@@ -83,16 +83,16 @@ function Home () {
                     type="button"
                     variant="primary"
                     onClick={() => {navigate("/projects")}}
-                    buttonText="projects"
-                    setCursorType={setCursorType}
-                />
+                    setCursorType={setCursorType}>
+                    Projects
+                </Button>
                 <Button
                     type="button"
                     variant="secondary"
                     onClick={() => {navigate("/services")}}
-                    buttonText="services"
-                    setCursorType={setCursorType}
-                />
+                    setCursorType={setCursorType}>
+                    Services
+                </Button>
             </div>
             </main>
             <Footer/>

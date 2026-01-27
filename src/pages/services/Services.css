@@ -29,5 +29,12 @@ header {
 }
 
 .services-section {
-    max-width: 1000px;
+    max-width: 900px;
+    margin: 0 46px;
+}
+
+.carousel-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }

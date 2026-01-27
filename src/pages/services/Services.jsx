@@ -5,10 +5,32 @@ import Header from "../../components/header/Header.jsx";
 import Footer from "../../components/footer/Footer.jsx";
 import Button from "../../components/button/Button.jsx";
 import portrait from "/src/assets/portrait.png";
-import Chip from "../../components/chip/Chip.jsx";
+import {useState} from "react";
+import {inventory} from "../../constants/inventory.js";
 import ServiceCard from "../../components/service-card/ServiceCard.jsx";
+import Chip from "../../components/chip/Chip.jsx";
 
 function Services() {
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const currentService = inventory[currentIndex];
+
+
+    const handleNextClick = () => {
+        setCurrentIndex((currentIndex + 1) % inventory.length);
+    };
+
+    const handlePrevClick = () => {
+        setCurrentIndex((currentIndex - 1 + inventory.length) % inventory.length);
+    };
+
+    const chips = currentService.deliverables.map((deliverable) => (
+        <Chip
+            key={deliverable}
+            variant="outlined"
+            chipText={deliverable}
+        />
+    ));
 
     return (
         <>
@@ -23,18 +45,25 @@ function Services() {
                 </section>
                 <section className="services-section">
                     <ServiceCard
-                        cardTitle={"Visual Design"}
-                        cardBody={"Ik geef het product een herkenbare, aantrekkelijke en herbruikbare visuele identiteit. Elk element sluit aan bij het merk én vergroot de gebruikservaring."}
-                        chips={
-                        <>
-                            <Chip variant={"outlined"} chipText={"Design System met UI kit en Style guide"}/>
-                            <Chip variant={"outlined"} chipText={"High fidelity mockups"}/>
-                            <Chip variant={"outlined"} chipText={"WCAG-proof, responsive designs"}/>
-                        </>
-                    }>
-
-                    </ServiceCard>
-
+                        key={currentService.title}
+                        cardTitle={currentService.title}
+                        cardBody={currentService.body}
+                        chips={chips}
+                    />
+                    <div className="carousel-nav">
+                        <Button
+                            type="button"
+                            variant="secondary"
+                            onClick={() => {handlePrevClick()}}
+                            buttonText="Vorige"
+                        />
+                        <Button
+                            type="button"
+                            variant="secondary"
+                            onClick={() => {handleNextClick()}}
+                            buttonText="Volgende"
+                        />
+                    </div>
                 </section>
                 <section className='contact-section'>
                     <img className="contact-image" src={portrait} alt="avatar" />

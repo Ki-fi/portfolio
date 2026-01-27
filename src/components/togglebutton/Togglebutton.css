@@ -29,8 +29,8 @@
 }
 
 .active {
-    color: var(--Green);
+    color: #286D6F;
     cursor: default;
-    border-bottom: 3px solid var(--Green);
+    border-bottom: 3px solid #286D6F;
 }
 

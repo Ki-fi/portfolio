@@ -37,10 +37,10 @@ function Button({ type, variant, onClick, children, form, setCursorType}) {
             onTouchStart={handleMouseDown}
             onMouseUp={handleMouseUp}
             onTouchEnd={handleMouseUp}
-            onMouseEnter={() => setCursorType("hidden")}
+            onMouseEnter={() => setCursorType?.("hidden")}
             onMouseLeave={() => {
                 handleMouseUp();
-                setCursorType("dot")}}
+                setCursorType?.("dot");}}
             form={form}
         >
             {children}

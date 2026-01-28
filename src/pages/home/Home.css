@@ -29,6 +29,7 @@
 
 .greeting {
     color: transparent;
+    display: inline-block;
     -webkit-text-stroke: 2px var(--Text-dark);
 }
 

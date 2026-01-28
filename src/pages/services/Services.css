@@ -1,4 +1,11 @@
 
+.services-page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #D8D6AD;
+}
+
 header {
     position: sticky;
     top: 0;
@@ -11,8 +18,7 @@ header {
     justify-content: flex-start;
     align-items: center;
     gap: 82px;
-    width: 100vw;
-    background-color: #D8D6AD;
+    padding: 0 32px;
 }
 
 .services-intro, .services-section, .contact-section {
@@ -30,11 +36,29 @@ header {
 
 .services-section {
     max-width: 900px;
-    margin: 0 46px;
 }
 
 .carousel-nav {
     display: flex;
     justify-content: space-between;
     width: 100%;
+}
+
+.dots {
+    display: flex;
+    gap: 4px;
+}
+
+.selected-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--Text-dark);
+}
+
+.default-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #7B7A6B;
 }

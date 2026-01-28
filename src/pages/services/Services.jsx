@@ -46,7 +46,7 @@ function Services() {
 
 
     return (
-        <>
+            <div className="services-page">
             <header>
                 <Header/>
             </header>
@@ -72,6 +72,17 @@ function Services() {
                             aria-label="Vorige service">
                             <span className="material-symbols-outlined">arrow_back_ios</span>
                         </Button>
+                        <div className="dots">
+                            {inventory.map((_, index) => (
+                                <div
+                                    key={index}
+                                    className={
+                                        index === currentIndex ? "selected-dot" : "default-dot"
+                                    }
+                                />
+                            ))}
+                        </div>
+
                         <Button
                             type="button"
                             variant="secondary"
@@ -89,14 +100,14 @@ function Services() {
                         <Button
                             type="button"
                             variant="primary"
-                            onClick={() => {window.location.href = "mailto:mail@kikimeekels.nl"}}>
+                            onClick={() => {window.location.href = "mailto:k.meekels@gmail.com"}}>
                             Plan een kennismaking
                         </Button>
                     </div>
                 </section>
                 <Footer/>
             </div>
-        </>
+            </div>
     )
 
 }

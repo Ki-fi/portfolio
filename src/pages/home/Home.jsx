@@ -55,7 +55,6 @@ function Home () {
                     { y: 50, autoAlpha: 0 },
                     { y: 0, autoAlpha: 1, duration: 0.7, ease: "power3.out", stagger: 0.9
                     }, "-=0.1");
-
         });
     });
 

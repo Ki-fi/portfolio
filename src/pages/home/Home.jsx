@@ -2,9 +2,8 @@ import './Home.css';
 import Button from "../../components/button/Button.jsx";
 import {useNavigate} from "react-router-dom";
 import gsap from 'gsap';
-import {useGSAP} from "@gsap/react";
 import SplitText from "gsap/SplitText"
-import {useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import Cursor from "../../components/cursor/Cursor.jsx";
 import Chip from "../../components/chip/Chip.jsx";
 import Footer from "../../components/footer/Footer.jsx";
@@ -21,14 +20,14 @@ function Home () {
 
     gsap.registerPlugin(SplitText);
 
-    useGSAP(()=> {
+    useEffect(()=> {
         document.fonts.ready.then(() => {
 
-            let split1 = SplitText.create(textRef1.current, {type: "chars"});
-            let split2 = SplitText.create(textRef2.current, {type: "chars"});
+            let split1 = SplitText.create(textRef1.current, {type: "words"});
+            let split2 = SplitText.create(textRef2.current, {type: "words"});
 
-            gsap.timeline()
-                .from(split1.chars, {
+            const tl = gsap.timeline()
+                .from(split1.words, {
                     yPercent: "random([-100, 100])",
                     rotation: "random(-40, 40)",
                     autoAlpha: 0,
@@ -38,7 +37,7 @@ function Home () {
                         from: "random"
                     }
                 })
-                .from(split2.chars, {
+                .from(split2.words, {
                     yPercent: "random([-100, 100])",
                     rotation: "random(-40, 40)",
                     autoAlpha: 0,
@@ -57,8 +56,9 @@ function Home () {
                     { y: 0, autoAlpha: 1, duration: 0.7, ease: "power3.out", stagger: 0.9
                     }, "-=0.1");
 
+            return () => tl.kill();
         });
-    });
+    }, []);
 
     return (
         <>

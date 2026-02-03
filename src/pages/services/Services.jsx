@@ -17,6 +17,9 @@ function Services() {
     const [direction, setDirection] = useState(1);
     const currentService = inventory[currentIndex];
     const cardRef = useRef(null);
+    const startX = useRef(null);
+    const currentX = useRef(0);
+    const isDragging = useRef(false);
 
     const handleNextClick = () => {
         setDirection(1);
@@ -26,6 +29,43 @@ function Services() {
     const handlePrevClick = () => {
         setDirection(-1);
         setCurrentIndex((currentIndex - 1 + inventory.length) % inventory.length);
+    };
+
+    const handleTouchStart = (e) => {
+        startX.current = e.touches[0].clientX;
+        isDragging.current = true;
+    };
+
+    const handleTouchMove = (e) => {
+        if (!isDragging.current) return;
+
+        currentX.current = e.touches[0].clientX;
+        const deltaX = currentX.current - startX.current;
+
+        gsap.set(cardRef.current, {
+            x: deltaX,
+            rotate: deltaX * 0.01,
+        });
+    };
+
+    const handleTouchEnd = () => {
+        isDragging.current = false;
+        const deltaX = currentX.current - startX.current;
+
+        const threshold = 80;
+
+        if (deltaX > threshold) {
+            handlePrevClick();
+        } else if (deltaX < -threshold) {
+            handleNextClick();
+        } else {
+            gsap.to(cardRef.current, {
+                x: 0,
+                rotate: 0,
+                duration: 0.4,
+                ease: "power3.out",
+            });
+        }
     };
 
     const chips = currentService.deliverables.map((deliverable) => (
@@ -52,6 +92,7 @@ function Services() {
                 title="Kiki Meekels – Services"
                 description="Ik help je team of organisatie om complexe ideeën tot heldere en mensgerichte producten te maken."
             />
+            <div className="services-page">
             <header>
                 <Header/>
             </header>
@@ -61,7 +102,12 @@ function Services() {
                     <p>Als Freelance Strategisch Product Designer ontwerp ik functionele en karaktervolle applicaties en websites.</p>
                     <p>Ik help je team of organisatie om complexe ideeën tot heldere en mensgerichte producten te maken. Met het oog op je bedrijfsdoelen en op de toekomst.</p>
                 </section>
-                <section className="services-section">
+                <section
+                    className="services-section"
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
+                >
                     <ServiceCard
                         ref={cardRef}
                         key={currentService.title}
@@ -77,6 +123,17 @@ function Services() {
                             aria-label="Vorige service">
                             <span className="material-symbols-outlined">arrow_back_ios</span>
                         </Button>
+                        <div className="dots">
+                            {inventory.map((_, index) => (
+                                <div
+                                    key={index}
+                                    className={
+                                        index === currentIndex ? "selected-dot" : "default-dot"
+                                    }
+                                />
+                            ))}
+                        </div>
+
                         <Button
                             type="button"
                             variant="secondary"
@@ -94,7 +151,7 @@ function Services() {
                         <Button
                             type="button"
                             variant="primary"
-                            onClick={() => {window.location.href = "mailto:mail@kikimeekels.nl"}}>
+                            onClick={() => {window.location.href = "mailto:k.meekels@gmail.com"}}>
                             Plan een kennismaking
                         </Button>
                     </div>
@@ -103,7 +160,7 @@ function Services() {
                     <Footer/>
                 </footer>
             </main>
-        </>
+            </div>
     )
 
 }

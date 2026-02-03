@@ -9,6 +9,9 @@
     min-width: 350px;
     padding: 64px;
     gap: 16px;
+
+    touch-action: pan-y;
+    will-change: transform;
 }
 
 .card-body {

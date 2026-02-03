@@ -49,6 +49,7 @@ p, .default-body-text {
   line-height: 70px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+  display: inline-block;
 }
 
 .subheading {
@@ -107,4 +108,9 @@ a:hover {
 
 .material-symbols-outlined:hover {
   cursor: pointer;
+}
+
+.word {
+  display: inline-block;
+  white-space: nowrap;
 }

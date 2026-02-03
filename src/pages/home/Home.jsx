@@ -8,7 +8,6 @@ import {useRef, useState} from "react";
 import Cursor from "../../components/cursor/Cursor.jsx";
 import Chip from "../../components/chip/Chip.jsx";
 import Footer from "../../components/footer/Footer.jsx";
-import {Helmet} from "react-helmet";
 import SEO from "../../components/SEO.jsx";
 
 function Home () {

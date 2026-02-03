@@ -100,7 +100,9 @@ function Home () {
                 </Button>
             </div>
             </main>
-            <Footer/>
+            <footer>
+                <Footer/>
+            </footer>
         </div>
         </>
     )

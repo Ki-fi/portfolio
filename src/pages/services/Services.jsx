@@ -55,7 +55,7 @@ function Services() {
             <header>
                 <Header/>
             </header>
-            <div className="services-wrapper">
+            <main className="services-wrapper">
                 <section className="services-intro">
                     <span className='headline'>Services</span>
                     <p>Als Freelance Strategisch Product Designer ontwerp ik functionele en karaktervolle applicaties en websites.</p>
@@ -99,8 +99,10 @@ function Services() {
                         </Button>
                     </div>
                 </section>
-                <Footer/>
-            </div>
+                <footer>
+                    <Footer/>
+                </footer>
+            </main>
         </>
     )
 

@@ -83,6 +83,7 @@ a {
   text-decoration: inherit;
   text-decoration: underline;
   text-underline-offset: 3px;
+  color: var(--Text-dark);
 }
 
 a:hover {

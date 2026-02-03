@@ -65,11 +65,11 @@ function Home () {
         <div className="homepage">
             <main className="home-container">
             <div className="greeting-container">
-                <span ref={textRef1} className="headline greeting">Hallo,</span>
-                <span ref={textRef2}
+                <h1 ref={textRef1} className="headline greeting">Hallo,</h1>
+                <h1 ref={textRef2}
                       className="headline"
                       onMouseEnter={()=> setCursorType("image")}
-                      onMouseLeave={()=> setCursorType("dot")}>ik ben Kiki</span>
+                      onMouseLeave={()=> setCursorType("dot")}>ik ben Kiki</h1>
                 <div ref={disciplinesRef} className="disciplines">
                     <Chip variant={"filled"} chipText={"User Research"}/>
                     <Chip variant={"filled"} chipText={"Interaction Design"}/>

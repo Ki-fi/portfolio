@@ -4,12 +4,18 @@ import thumbnailProject1 from "../../assets/petnet/Mockup_Post.jpg";
 import thumbnailProject2 from "../../assets/EP/Mockup_Overview.jpg";
 import thumbnailProject3 from "../../assets/PIDZ/Mockup_login.jpg";
 import Chip from "../../components/chip/Chip.jsx";
+import SEO from "../../components/SEO.jsx";
 // import {useNavigate} from "react-router-dom";
 
 function Projects() {
     // const navigate = useNavigate();
 
     return (
+        <>
+        <SEO
+            title="Kiki Meekels – Projects"
+            description="Mijn portfolio met projecten in User Research, Interaction Design, Visual Design en Development"
+        />
         <div className="projects-page">
             <div className="project-1">
                 <ProjectCard
@@ -45,7 +51,7 @@ function Projects() {
                 />
             </div>
         </div>
-
+        </>
 
     )
 }

@@ -9,6 +9,7 @@ import ServiceCard from "../../components/service-card/ServiceCard.jsx";
 import Chip from "../../components/chip/Chip.jsx";
 import { useRef, useLayoutEffect } from 'react';
 import gsap from 'gsap';
+import SEO from "../../components/SEO.jsx";
 
 function Services() {
 
@@ -47,6 +48,10 @@ function Services() {
 
     return (
         <>
+            <SEO
+                title="Kiki Meekels – Services"
+                description="Ik help je team of organisatie om complexe ideeën tot heldere en mensgerichte producten te maken."
+            />
             <header>
                 <Header/>
             </header>

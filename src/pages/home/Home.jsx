@@ -7,6 +7,7 @@ import {useEffect, useRef, useState} from "react";
 import Cursor from "../../components/cursor/Cursor.jsx";
 import Chip from "../../components/chip/Chip.jsx";
 import Footer from "../../components/footer/Footer.jsx";
+import SEO from "../../components/SEO.jsx";
 
 function Home () {
 
@@ -61,15 +62,19 @@ function Home () {
 
     return (
         <>
+        <SEO
+            title="Kiki Meekels – Product Design"
+            description="Ik ontwerp functionele en karaktervolle applicaties en websites"
+        />
         <Cursor variant={cursorType}/>
         <div className="homepage">
             <main className="home-container">
             <div className="greeting-container">
-                <span ref={textRef1} className="headline greeting">Hallo,</span>
-                <span ref={textRef2}
+                <h1 ref={textRef1} className="headline greeting">Hallo,</h1>
+                <h1 ref={textRef2}
                       className="headline"
                       onMouseEnter={()=> setCursorType("image")}
-                      onMouseLeave={()=> setCursorType("dot")}>ik ben Kiki</span>
+                      onMouseLeave={()=> setCursorType("dot")}>ik ben Kiki</h1>
                 <div ref={disciplinesRef} className="disciplines">
                     <Chip variant={"filled"} chipText={"User Research"}/>
                     <Chip variant={"filled"} chipText={"Interaction Design"}/>
@@ -95,7 +100,9 @@ function Home () {
                 </Button>
             </div>
             </main>
-            <Footer/>
+            <footer>
+                <Footer/>
+            </footer>
         </div>
         </>
     )

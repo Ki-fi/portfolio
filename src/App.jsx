@@ -5,6 +5,7 @@ import Home from "./pages/home/Home.jsx";
 import Projects from "./pages/projects/Projects.jsx";
 import Petnet from "./pages/petnet/Petnet.jsx";
 import Services from "./pages/services/Services.jsx";
+import Accessibility from "./pages/accessibility/Accessibility.jsx";
 
 function App() {
 
@@ -13,8 +14,8 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/projects" element={<div>Coming soon</div>} />
           <Route path="/services" element={<Services />} />
-          <Route path="/privacy" element={<div>Coming soon</div>} />
-          <Route path="/toegankelijkheid" element={<div>Coming soon</div>} />
+          <Route path="/petnet" element={<Petnet/>} />
+          <Route path="/toegankelijkheid" element={<Accessibility/>} />
           <Route path="*" element={<div></div>} />
       </Routes>
   )

@@ -5,7 +5,7 @@ function Footer( ) {
 
     return (
         <footer className="footer">
-            <p>KVK: 99018071 | BTW: NL005367679B66 | <Link to="/privacy">Privacy</Link> | <Link to="/toegankelijkheid">Toegankelijkheid</Link></p>
+            <p>KVK: 99018071 | BTW: NL005367679B66 | <a href={()=>{}}>Privacy</a> | <Link to={'/toegankelijkheid'}>Toegankelijkheid</Link></p>
         </footer>
     )
 

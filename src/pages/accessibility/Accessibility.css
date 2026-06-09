@@ -1,24 +1,30 @@
 
+.accessibility-page{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
 .accessibility-title {
     margin: 24px 0;
 }
 
 .accessibility-wrapper {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
-    flex-wrap: wrap;
     gap: 24px;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    padding: 0 16px 32px;
     background-color: #D8D6AD;
 }
 
 .accessibility-title, .accessibility-section {
     width: 100%;
     max-width: 750px;
-    padding: 0 32px;
     text-align: left;
 }
 

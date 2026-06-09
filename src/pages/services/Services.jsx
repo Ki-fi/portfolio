@@ -7,7 +7,7 @@ import {useState} from "react";
 import {inventory} from "../../constants/inventory.js";
 import ServiceCard from "../../components/service-card/ServiceCard.jsx";
 import Chip from "../../components/chip/Chip.jsx";
-import { useRef, useLayoutEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import SEO from "../../components/SEO.jsx";
 
@@ -23,12 +23,12 @@ function Services() {
 
     const handleNextClick = () => {
         setDirection(1);
-        setCurrentIndex((currentIndex + 1) % inventory.length);
+        setCurrentIndex((prev) => (prev + 1) % inventory.length);
     };
 
     const handlePrevClick = () => {
         setDirection(-1);
-        setCurrentIndex((currentIndex - 1 + inventory.length) % inventory.length);
+        setCurrentIndex((prev) => (prev - 1 + inventory.length) % inventory.length);
     };
 
     const handleTouchStart = (e) => {
@@ -49,6 +49,7 @@ function Services() {
     };
 
     const handleTouchEnd = () => {
+        if (startX.current == null) return;
         isDragging.current = false;
         const deltaX = currentX.current - startX.current;
 
@@ -75,7 +76,7 @@ function Services() {
             chipText={deliverable}
         />));
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         if (!cardRef.current) return;
 
         gsap.fromTo(

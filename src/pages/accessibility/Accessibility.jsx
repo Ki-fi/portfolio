@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 
 function Accessibility() {
     return (
-        <>
+        <div className="accessibility-page">
         <header>
             <Header/>
         </header>
@@ -40,7 +40,7 @@ function Accessibility() {
             <footer>
                 <Footer />
             </footer>
-            </>
+        </div>
     )
 }
 

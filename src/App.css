@@ -60,6 +60,7 @@ p, .default-body-text {
   line-height: 26px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+  text-align: left;
 }
 
 .subtitle {
@@ -67,8 +68,9 @@ p, .default-body-text {
   font-size: 15px;
   font-style: normal;
   font-weight: 600;
-  line-height: 28px;
+  line-height: 20px;
   letter-spacing: 1px;
+  text-align: left;
 }
 
 .sectiontitle {

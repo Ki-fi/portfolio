@@ -24,3 +24,10 @@
     gap: 8px;
     flex-wrap: wrap;
 }
+
+@media screen and (max-width: 768px) {
+    .service-card {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}

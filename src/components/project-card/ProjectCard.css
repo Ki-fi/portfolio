@@ -5,9 +5,8 @@
     align-items: stretch;
     align-content: stretch;
     justify-content: space-between;
-    border: 2px solid var(--Text-dark);
-    border-radius: 4px;
-    background: #EBEBEB;
+    border-radius: 8px;
+    background: white;
     box-shadow: 0 6px 0 0 var(--Text-dark);
     min-width: 350px;
     cursor: pointer;
@@ -19,6 +18,7 @@
 
 .card-content img {
     width: 100%;
+    border-radius: 8px 8px 0 0;
 }
 
 .card-footer {

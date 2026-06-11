@@ -28,17 +28,20 @@ function Projects() {
             <div className="project-1">
                 <ProjectCard
                     thumbnail={thumbnailProject1}
+                    projectTitle={"Pet sitting platform"}
                     onClick={() => {}}
                     // onClick={() => {navigate("/petnet")}}
                     chips={
                         <>
                         <Chip variant={"filled"} chipText={"Software Development"}/>
+                        <Chip variant={"filled"} chipText={"Graduation project"}/>
                         </>}
                 />
             </div>
             <div className="project-2">
                 <ProjectCard
                     thumbnail={thumbnailProject2}
+                    projectTitle={"Multi-user timeline"}
                     onClick={() => {}}
                     chips={
                         <>
@@ -50,6 +53,7 @@ function Projects() {
             <div className="project-3">
                 <ProjectCard
                     thumbnail={thumbnailProject3}
+                    projectTitle={"Redesign intake process"}
                     onClick={() => {}}
                     chips={
                         <>

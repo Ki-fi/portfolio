@@ -1,6 +1,6 @@
 import './ProjectCard.css';
 
-function ProjectCard({ thumbnail, chips, onClick }) {
+function ProjectCard({ thumbnail, chips, onClick, projectTitle }) {
 
     return (
         <article className="project-card"
@@ -10,7 +10,10 @@ function ProjectCard({ thumbnail, chips, onClick }) {
                 <img src={thumbnail} alt="project-thumbnail"/>
             </div>
             <div className="card-footer">
-                {chips}
+                <span className='subheading'>{projectTitle}</span>
+                <div className='chip-container'>
+                    {chips}
+                </div>
             </div>
         </article>
     )

@@ -37,7 +37,7 @@ function Projects() {
             <div className="project-3">
                 <ProjectCard
                     thumbnail={thumbnailProject3}
-                    projectTitle={"Redesign intake process"}
+                    projectTitle={"Onboarding process - Redesign"}
                     onClick={onClickUrl("https://www.behance.net/gallery/226826743/Case-Study-Reducing-Bottlenecks-in-Onboarding")}
                     chips={
                         <>
@@ -49,7 +49,7 @@ function Projects() {
             <div className="project-1">
                 <ProjectCard
                     thumbnail={thumbnailProject1}
-                    projectTitle={"Pet sitting platform"}
+                    projectTitle={"Pet sitting platform - Development"}
                     onClick={onClickUrl("https://www.behance.net/gallery/227208459/PET-NET-A-pet-sitting-social-network")}
                     chips={
                         <>
@@ -61,7 +61,7 @@ function Projects() {
             <div className="project-4">
                 <ProjectCard
                     thumbnail={thumbnailProject4}
-                    projectTitle={"Redesign booking flow"}
+                    projectTitle={"Booking flow - Redesign"}
                     onClick={onClickUrl("https://www.behance.net/gallery/183804025/Case-Study-Redesigning-the-Booking-Flow")}
                     chips={
                         <>
@@ -73,7 +73,7 @@ function Projects() {
             <div className="project-2">
                 <ProjectCard
                     thumbnail={thumbnailProject2}
-                    projectTitle={"Multi-user timeline"}
+                    projectTitle={"Multi-user timeline - Design"}
                     onClick={onClickUrl("https://www.behance.net/gallery/227171627/Case-Study-Designing-a-Multi-User-Timeline")}
                     chips={
                         <>

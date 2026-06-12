@@ -1,10 +1,13 @@
 import './ProjectCard.css';
 
-function ProjectCard({ thumbnail, chips, onClick, projectTitle }) {
+function ProjectCard({ thumbnail, chips, onClick, projectTitle, setCursorType }) {
 
     return (
-        <article className="project-card"
-                 onClick={onClick}
+        <article
+            className="project-card"
+            onClick={onClick}
+            onMouseEnter={() => setCursorType?.("project")}
+            onMouseLeave={() => setCursorType?.("default")}
         >
             <div className="card-content">
                 <img src={thumbnail} alt="project-thumbnail"/>

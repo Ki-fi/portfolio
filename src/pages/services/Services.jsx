@@ -157,10 +157,10 @@ function Services() {
                         </Button>
                     </div>
                 </section>
-                <footer>
+            </main>
+            <footer>
                     <Footer/>
                 </footer>
-            </main>
             </div>
             </>
     )

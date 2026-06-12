@@ -10,10 +10,11 @@ import thumbnailProject3 from "../../assets/PIDZ/Mockup_login.jpg";
 import thumbnailProject4 from "../../assets/Qrabbl/Mockup_Datepicker.jpg";
 import Chip from "../../components/chip/Chip.jsx";
 import SEO from "../../components/SEO.jsx";
-import {useNavigate} from "react-router-dom";
+import Cursor from "../../components/cursor/Cursor.jsx";
+import {useState} from "react";
 
 function Projects() {
-    const navigate = useNavigate();
+    const [cursorType, setCursorType] = useState("default");
 
     const openInNewTab = (url) => {
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
@@ -28,16 +29,19 @@ function Projects() {
             title="Kiki Meekels – Projects"
             description="Mijn portfolio met projecten in User Research, Interaction Design, Visual Design en Development"
         />
+        <Cursor variant={cursorType} />
         <div className="projects-page">
             <header className="projects-header">
                 <Header/>
             </header>
             <main className="projects-wrapper">
-                
-            <div className="project-3">
+                <h1 className='headline'>Projects</h1>
+                <section className='projects-section'>
+            <div>
                 <ProjectCard
                     thumbnail={thumbnailProject3}
                     projectTitle={"Onboarding process - Redesign"}
+                    setCursorType={setCursorType}
                     onClick={onClickUrl("https://www.behance.net/gallery/226826743/Case-Study-Reducing-Bottlenecks-in-Onboarding")}
                     chips={
                         <>
@@ -46,10 +50,11 @@ function Projects() {
                         </>}
                 />
             </div>
-            <div className="project-1">
+            <div>
                 <ProjectCard
                     thumbnail={thumbnailProject1}
                     projectTitle={"Pet sitting platform - Development"}
+                    setCursorType={setCursorType}
                     onClick={onClickUrl("https://www.behance.net/gallery/227208459/PET-NET-A-pet-sitting-social-network")}
                     chips={
                         <>
@@ -58,10 +63,11 @@ function Projects() {
                         </>}
                 />
             </div>
-            <div className="project-4">
+            <div>
                 <ProjectCard
                     thumbnail={thumbnailProject4}
                     projectTitle={"Booking flow - Redesign"}
+                    setCursorType={setCursorType}
                     onClick={onClickUrl("https://www.behance.net/gallery/183804025/Case-Study-Redesigning-the-Booking-Flow")}
                     chips={
                         <>
@@ -70,10 +76,11 @@ function Projects() {
                         </>}
                 />
             </div>  
-            <div className="project-2">
+            <div>
                 <ProjectCard
                     thumbnail={thumbnailProject2}
                     projectTitle={"Multi-user timeline - Design"}
+                    setCursorType={setCursorType}
                     onClick={onClickUrl("https://www.behance.net/gallery/227171627/Case-Study-Designing-a-Multi-User-Timeline")}
                     chips={
                         <>
@@ -81,8 +88,8 @@ function Projects() {
                             <Chip variant={"filled"} chipText={"Visual Design"}/>
                         </>}
                 />
-            </div>          
-            </main>
+            </div>   
+            </section>       
             <section className='contact-section'>
                     <img className="contact-image" src={portrait} alt="avatar" />
                     <span className='subheading'>Samenwerken?</span>
@@ -96,6 +103,7 @@ function Projects() {
                         </Button>
                     </div>
                 </section>
+            </main>
             <footer>
                 <Footer/>
             </footer>

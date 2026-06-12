@@ -35,6 +35,8 @@ function Cursor({ variant }) {
         >
             {variant === "dot" && <div className="cursor-dot" />}
             {variant === "image" && <img className="cursor-image" src={portrait} alt="cursor" />}
+            {variant === "project" && <div className="cursor-project material-symbols-outlined" aria-label="Open project">open_in_new</div>}
+            {variant === "default" && null}
         </div>
     )
 

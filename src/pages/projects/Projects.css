@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 82px;
+    gap: 32px;
     align-items: center;
     background-color: #D8D6AD;
 }
@@ -18,20 +18,15 @@
     justify-content: flex-start;
     align-items: center;
     max-width: 900px;
-    gap: 48px;
+    gap: 82px;
     padding: 0 32px;
 }
 
-.project-1 {
-    
-}
-
-.project-2 {
-    
-}
-
-.project-3 {
-    
+.projects-section {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
 }
 
 @media screen and (max-width: 768px) {
@@ -40,7 +35,4 @@
         flex-direction: column;
     }
 
-    .projects-wrapper {
-        gap: 24px;
-    }
 }

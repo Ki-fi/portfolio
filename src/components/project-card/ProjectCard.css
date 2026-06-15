@@ -1,4 +1,12 @@
 
+
+.project-card-wrapper {
+    opacity: 1;
+    transform: translateY(18px) scale(0.98);
+    animation: project-card-enter 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    min-width: 350px;
+}
+
 .project-card {
     display: flex;
     z-index: 0;
@@ -13,10 +21,13 @@
     min-width: 350px;
     overflow: hidden;
     cursor: pointer;
-    opacity: 0;
-    transform: translateY(18px) scale(0.98);
-    animation: project-card-enter 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    opacity: 1;
     transition: transform 0.2s ease-in-out;
+}
+
+.project-card:hover {
+    transform: scale(1.01) translateY(-4px); 
+    transition: transform 0.1s ease-in-out;
 }
 
 @keyframes project-card-enter {
@@ -29,11 +40,6 @@
         opacity: 1;
         transform: translateY(0) scale(1);
     }
-}
-
-.project-card:hover {
-    transform: scale(1.01) translateY(-4px); 
-    transition: transform 0.1s ease-in-out;
 }
 
 .project-card:hover .card-footer {
@@ -86,8 +92,15 @@
 }
 
 @media screen and (max-width: 768px) {
+
+    .project-wrapper {
+        padding: 0 16px;
+    }
+
     .card-footer {
         padding: 16px;
     }
+
+
     
 }

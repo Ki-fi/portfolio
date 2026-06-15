@@ -4,6 +4,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: #D8D6AD;
 }
 
 .privacy-title {

@@ -62,3 +62,11 @@
     border-radius: 50%;
     background-color: #7B7A6B;
 }
+
+@media screen and (max-width: 768px) {
+
+    .services-wrapper {
+        padding: 0 16px;
+    }
+    
+}

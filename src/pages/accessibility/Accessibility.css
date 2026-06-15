@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     text-align: left;
+    background-color: #D8D6AD;
 }
 
 .accessibility-title {

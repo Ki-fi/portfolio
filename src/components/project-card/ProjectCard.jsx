@@ -3,9 +3,9 @@ import './ProjectCard.css';
 function ProjectCard({ thumbnail, chips, onClick, projectTitle, setCursorType, style }) {
 
     return (
+        <div className="project-card-wrapper" style={style}>
         <article
             className="project-card"
-            style={style}
             onClick={onClick}
             onMouseEnter={() => setCursorType?.("project")}
             onMouseLeave={() => setCursorType?.("default")}
@@ -20,6 +20,7 @@ function ProjectCard({ thumbnail, chips, onClick, projectTitle, setCursorType, s
                 </div>
             </div>
         </article>
+        </div>
     )
 }
 

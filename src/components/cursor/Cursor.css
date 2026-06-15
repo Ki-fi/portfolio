@@ -1,6 +1,6 @@
 
 .cursor {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     pointer-events: none;
@@ -20,4 +20,16 @@
     border-radius: 50%;
     box-shadow: -3px 18px 27px -16px rgba(0,0,0,0.75);
     transform: translate(-10px, -85%);
+}
+
+.cursor-project {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 999px;
+    background: var(--Text-dark);
+    color: #fff;
+    transform: translate(-0%, -100%);
 }

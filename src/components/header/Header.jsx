@@ -6,10 +6,13 @@ function Header() {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const selected = location.pathname.startsWith('/Home') ? 'home'
-        : location.pathname.startsWith('/Projects') ? 'projects'
-            : location.pathname.startsWith('/Services') ? 'services'
-                : 'services';
+    const selected = location.pathname === '/'
+        ? 'home'
+        : location.pathname.startsWith('/projects')
+            ? 'projects'
+            : location.pathname.startsWith('/services')
+                ? 'services'
+                : 'home';
 
     const handleItem = (path) => {
         navigate(path);

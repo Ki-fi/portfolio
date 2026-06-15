@@ -94,7 +94,7 @@ function Services() {
                 description="Ik help je team of organisatie om complexe ideeën tot heldere en mensgerichte producten te maken."
             />
             <div className="services-page">
-            <header>
+            <header className="services-header">
                 <Header/>
             </header>
             <main className="services-wrapper">
@@ -157,10 +157,10 @@ function Services() {
                         </Button>
                     </div>
                 </section>
-                <footer>
+            </main>
+            <footer>
                     <Footer/>
                 </footer>
-            </main>
             </div>
             </>
     )

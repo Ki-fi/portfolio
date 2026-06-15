@@ -1,10 +1,11 @@
 import './ProjectCard.css';
 
-function ProjectCard({ thumbnail, chips, onClick, projectTitle, setCursorType }) {
+function ProjectCard({ thumbnail, chips, onClick, projectTitle, setCursorType, style }) {
 
     return (
         <article
             className="project-card"
+            style={style}
             onClick={onClick}
             onMouseEnter={() => setCursorType?.("project")}
             onMouseLeave={() => setCursorType?.("default")}

@@ -16,6 +16,33 @@ import {useState} from "react";
 function Projects() {
     const [cursorType, setCursorType] = useState("default");
 
+    const projectCards = [
+        {
+            thumbnail: thumbnailProject3,
+            title: "Onboarding process - Redesign",
+            url: "https://www.behance.net/gallery/226826743/Case-Study-Reducing-Bottlenecks-in-Onboarding",
+            chips: ["User Research", "Interaction Design"],
+        },
+        {
+            thumbnail: thumbnailProject1,
+            title: "Pet sitting platform - Development",
+            url: "https://www.behance.net/gallery/227208459/PET-NET-A-pet-sitting-social-network",
+            chips: ["Product Design", "Software Development"],
+        },
+        {
+            thumbnail: thumbnailProject4,
+            title: "Booking flow - Redesign",
+            url: "https://www.behance.net/gallery/183804025/Case-Study-Redesigning-the-Booking-Flow",
+            chips: ["User Research", "Interaction Design"],
+        },
+        {
+            thumbnail: thumbnailProject2,
+            title: "Multi-user timeline - Design",
+            url: "https://www.behance.net/gallery/227171627/Case-Study-Designing-a-Multi-User-Timeline",
+            chips: ["Interaction Design", "Visual Design"],
+        },
+    ];
+
     const openInNewTab = (url) => {
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
         if (newWindow) newWindow.opener = null;
@@ -37,59 +64,25 @@ function Projects() {
             <main className="projects-wrapper">
                 <h1 className='headline'>Projects</h1>
                 <section className='projects-section'>
-            <div>
-                <ProjectCard
-                    thumbnail={thumbnailProject3}
-                    projectTitle={"Onboarding process - Redesign"}
-                    setCursorType={setCursorType}
-                    onClick={onClickUrl("https://www.behance.net/gallery/226826743/Case-Study-Reducing-Bottlenecks-in-Onboarding")}
-                    chips={
-                        <>
-                            <Chip variant={"filled"} chipText={"User Research"}/>
-                            <Chip variant={"filled"} chipText={"Interaction Design"}/>
-                        </>}
-                />
-            </div>
-            <div>
-                <ProjectCard
-                    thumbnail={thumbnailProject1}
-                    projectTitle={"Pet sitting platform - Development"}
-                    setCursorType={setCursorType}
-                    onClick={onClickUrl("https://www.behance.net/gallery/227208459/PET-NET-A-pet-sitting-social-network")}
-                    chips={
-                        <>
-                        <Chip variant={"filled"} chipText={"Product Design"}/>
-                        <Chip variant={"filled"} chipText={"Software Development"}/>
-                        </>}
-                />
-            </div>
-            <div>
-                <ProjectCard
-                    thumbnail={thumbnailProject4}
-                    projectTitle={"Booking flow - Redesign"}
-                    setCursorType={setCursorType}
-                    onClick={onClickUrl("https://www.behance.net/gallery/183804025/Case-Study-Redesigning-the-Booking-Flow")}
-                    chips={
-                        <>
-                        <Chip variant={"filled"} chipText={"User Research"}/>
-                        <Chip variant={"filled"} chipText={"Interaction Design"}/>
-                        </>}
-                />
-            </div>  
-            <div>
-                <ProjectCard
-                    thumbnail={thumbnailProject2}
-                    projectTitle={"Multi-user timeline - Design"}
-                    setCursorType={setCursorType}
-                    onClick={onClickUrl("https://www.behance.net/gallery/227171627/Case-Study-Designing-a-Multi-User-Timeline")}
-                    chips={
-                        <>
-                            <Chip variant={"filled"} chipText={"Interaction Design"}/>
-                            <Chip variant={"filled"} chipText={"Visual Design"}/>
-                        </>}
-                />
-            </div>   
-            </section>       
+                    {projectCards.map((project, index) => (
+                        <div key={project.title}>
+                            <ProjectCard
+                                thumbnail={project.thumbnail}
+                                projectTitle={project.title}
+                                setCursorType={setCursorType}
+                                onClick={onClickUrl(project.url)}
+                                style={{ animationDelay: `${index * 120}ms` }}
+                                chips={
+                                    <>
+                                        {project.chips.map((chipText) => (
+                                            <Chip key={`${project.title}-${chipText}`} variant={"filled"} chipText={chipText}/>
+                                        ))}
+                                    </>
+                                }
+                            />
+                        </div>
+                    ))}
+                </section>       
             <section className='contact-section'>
                     <img className="contact-image" src={portrait} alt="avatar" />
                     <span className='subheading'>Samenwerken?</span>
@@ -109,7 +102,6 @@ function Projects() {
             </footer>
         </div>
         </>
-
     )
 }
 
